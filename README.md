@@ -3,7 +3,12 @@
 
 Additionally, the project introduces the principle of least privilege, meaning user access rights are limited to the essentials required for their tasks.
 
-In a highly available system, application servers are distributed across multiple availability zones. Each zone contains identically configured servers. This setup enables seamless redirection by the application load balancer to servers in another zone if one becomes unavailable. The project includes an Ansible bash script designed to detect and update newly provisioned instances, ensuring they run the latest version from our private Docker Hub repository.
+In a highly available system, application servers are distributed across multiple availability zones. Each zone contains identically configured servers. This setup enables seamless redirection by the application load balancer to servers in another zone if one becomes unavailable. The project includes an Ansible bash script designed to detect and update newly provisioned instances, ensuring they run the latest version from our private Docker Hub repository.</p>
+<p id="description">This README document provides a detailed guide, offering you a step-by-step process to effectively implement the Terraform code in this project. This results in the deployment of necessary resources in your AWS environment.
+
+Moreover, this project adheres to modern DevOps best practices, emphasizing automated provisioning, scalability, high availability, and resilience. It enables developers and operators to collaboratively manage and enhance the lifecycle of the Java application, from development to deployment, utilizing the capabilities of AWS infrastructure.
+
+By following these instructions, you will be well-prepared to initiate a sophisticated and adaptable deployment of the Java Application. You'll leverage advanced tools and cloud resources, ensuring optimal outcomes.
 </p>
 <p id="description">Here is the architectural diagram representing the project's objectives.</p>
 
