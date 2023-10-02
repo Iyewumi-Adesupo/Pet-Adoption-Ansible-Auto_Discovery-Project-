@@ -2,7 +2,7 @@ variable "aws_region" {
   default = "eu-west-3"
 }
 variable "profile" {
-  default = "Groupaccess"
+  default = "sue-ade"
 }
 variable "public_keypair_path" {
   default = "~/keypair/ET2PACAAD.pub"
@@ -14,14 +14,14 @@ variable "instance_type" {
   default = "t3.medium"
 }
 variable "domain_name" {
-  default = "sophieplace.com"
+  default = "crystalpalace.online"
 }
 variable "email" {
-  default = "amibaby104@gmail.com"
+  default = "adesuposusan89@yahoo.com"
 }
 variable "api_key" {
-  default = "NRAK-9D4ZJK6FA2133JZT3QZN0QHW3HT"
+  default = "NRAK-81D5A0VU3I67CXWHC7ENSQE45IK"
 }
 variable "account_id" {
-  default = "4092682"
+  default = "4091023"
 }
