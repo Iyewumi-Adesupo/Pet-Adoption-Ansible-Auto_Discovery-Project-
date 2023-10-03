@@ -27,7 +27,7 @@ sudo cat <<EOT>> /etc/docker/daemon.json
 }
 EOT
 sudo systemctl restart docker
-curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo  NEW_RELIC_API_KEY=NRAK-81D5A0VU3I67CXWHC7ENSQE45IK NEW_RELIC_ACCOUNT_ID=4091023 NEW_RELIC_REGION=EU /usr/local/bin/newrelic install -y
+curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo  NEW_RELIC_API_KEY=NRAK-9D4ZJK6FA2133JZT3QZN0QHW3HT NEW_RELIC_ACCOUNT_ID=4092682 NEW_RELIC_REGION=EU /usr/local/bin/newrelic install -y
 sudo hostnamectl set-hostname jenkins
 EOF
 }

@@ -1,8 +1,6 @@
 #!/bin/bash
-
 #update to the server
 sudo apt update
-
 #installing consul
 sudo wget https://releases.hashicorp.com/consul/1.7.3/consul_1.7.3_linux_amd64.zip
 sudo apt install unzip -y
@@ -38,13 +36,11 @@ sudo apt-get install software-properties-common
 sudo add-apt-repository universe
 sudo apt-get install certbot -y
 sudo certbot certonly --standalone -d "${domain_name}" --email "${email}" --agree-tos --non-interactive
-
 #installing vault
 sudo wget https://releases.hashicorp.com/vault/1.5.0/vault_1.5.0_linux_amd64.zip
 sudo unzip vault_1.5.0_linux_amd64.zip
 sudo mv vault /usr/bin/
 sudo mkdir /etc/vault/
-
 #creating vault configuration
 sudo cat <<EOT>> /etc/vault/config.hcl
 storage "consul" {

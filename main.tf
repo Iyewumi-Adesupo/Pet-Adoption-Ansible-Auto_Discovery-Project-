@@ -174,7 +174,7 @@ module "RDS" {
 module "route53" {
   source            = "./module/route53"
   domain-name       = "crystalpalace.online"
-  domain-name1      = "stage.crystalpalace.online"
+  domain-name1      = "crystalpalace.online"
   stage_lb_dns_name = module.stage-high-availability.stage-alb-dns
   stage_lb_zoneid   = module.stage-high-availability.stage-alb-zone-id
   domain-name2      = "prod.crystalpalace.online"

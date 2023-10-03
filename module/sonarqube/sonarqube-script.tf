@@ -104,9 +104,9 @@ sudo systemctl enable nginx.service
 sudo systemctl stop nginx.service
 sudo systemctl start nginx.service
 #Install New relic
-curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo  NEW_RELIC_API_KEY=NRAK-81D5A0VU3I67CXWHC7ENSQE45IK NEW_RELIC_ACCOUNT_ID=4091023 NEW_RELIC_REGION=EU /usr/local/bin/newrelic install -y
+curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo  NEW_RELIC_API_KEY=NRAK-81D5A0VU3I67CXWHC7ENSQE45IK NEW_RELIC_ACCOUNT_ID=4091023 NEW_RELIC_REGION=EU /usr/local/bin/newrelic install
 echo "****************Change Hostname(IP) to something readable**************"
-sudo hostnamectl set-hostname SonarQube
+sudo hostnamectl set-hostname Sonarqube
 sudo reboot
 EOF
 }

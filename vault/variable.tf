@@ -2,7 +2,7 @@ variable "aws_region" {
   default = "eu-west-3"
 }
 variable "profile" {
-  default = "sue-ade"
+  default = "Groupaccess"
 }
 variable "public_keypair_path" {
   default = "~/keypair/ET2PACAAD.pub"
@@ -17,7 +17,7 @@ variable "domain_name" {
   default = "crystalpalace.online"
 }
 variable "email" {
-  default = "adesuposusan89@yahoo.com"
+  default = "iyewumi.adesupo@yahoo.com"
 }
 variable "api_key" {
   default = "NRAK-81D5A0VU3I67CXWHC7ENSQE45IK"
