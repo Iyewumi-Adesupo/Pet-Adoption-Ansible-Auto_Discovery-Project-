@@ -93,7 +93,7 @@ data "aws_route53_zone" "route53_zone" {
 }
 
 #Create route 53 A record
-resource "aws_route53_record" "record" {
+resource "aws_route53_record" "record-vault" {
   zone_id = data.aws_route53_zone.route53_zone.zone_id
   name    = var.domain_name
   type    = "A"

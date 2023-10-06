@@ -21,15 +21,15 @@ data "aws_iam_policy_document" "vault-kms-unseal" {
   }
 }
 resource "aws_iam_role" "vault-kms-unseal" {
-  name               = "vault-kms-role-2"
+  name               = "vault-kms-role-5"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 resource "aws_iam_role_policy" "vault-kms-unseal" {
-  name   = "Vault-KMS-Unseal-2"
+  name   = "Vault-KMS-Unseal-5"
   role   = aws_iam_role.vault-kms-unseal.id
   policy = data.aws_iam_policy_document.vault-kms-unseal.json
 }
 resource "aws_iam_instance_profile" "vault-kms-unseal" {
-  name = "vault-kms-unseal-2"
+  name = "vault-kms-unseal-5"
   role = aws_iam_role.vault-kms-unseal.name
 }

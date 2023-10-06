@@ -173,17 +173,17 @@ module "RDS" {
 
 module "route53" {
   source            = "./module/route53"
-  domain-name       = "crystalpalace.online"
-  domain-name1      = "crystalpalace.online"
+  domain-name       = "sophieplace.com"
+  domain-name1      = "stage.sophieplace.com"
   stage_lb_dns_name = module.stage-high-availability.stage-alb-dns
   stage_lb_zoneid   = module.stage-high-availability.stage-alb-zone-id
-  domain-name2      = "prod.crystalpalace.online"
+  domain-name2      = "prod.sophieplace.com"
   prod_lb_dns_name  = module.prod-high-availability.prod-lb-dns
   prod_lb_zoneid    = module.prod-high-availability.prod-lb-zone-id
 }
 
 module "ssl" {
   source       = "./module/ssl"
-  domain_name  = "crystalpalace.online"
-  domain_name2 = "*.crystalpalace.online"
+  domain_name  = "sophieplace.com"
+  domain_name2 = "*.sophieplace.com"
 }

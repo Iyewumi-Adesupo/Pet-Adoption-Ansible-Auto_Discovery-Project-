@@ -1,11 +1,11 @@
 provider "aws" {
   region  = "eu-west-3"
-  profile = "Groupaccess"
+  profile = "sue-ade"
 }
 
 provider "vault" {
-  token   = "s.Kth3OjIYvXnN9Xvx26ml7gPm"
-  address = "https://crystalpalace.online"
+  token   = "s.bT1oqrcYh8WIjC4JXriJRTAZ"
+  address = "https://sophieplace.com"
 }
 
 data "vault_generic_secret" "db_secret" {

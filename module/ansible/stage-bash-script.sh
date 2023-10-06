@@ -15,7 +15,7 @@ echo "\$instance ansible_user-ec2-user ansible_ssh_private_key_file=/etc/ansible
        done
 }
 instanceUpdate() {
-    sleep 30
+    sleep
     ansible-playbook /etc/ansible/stage-trigger.yml --extra-vars "ansible_python_interpreter=/usr/bin/python3.9"
     sleep 30
 }
