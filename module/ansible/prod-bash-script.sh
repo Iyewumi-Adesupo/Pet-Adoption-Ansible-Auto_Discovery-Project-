@@ -10,8 +10,8 @@ inventoryUpdate() {
         echo "[webservers]" > /etc/ansible/prod-hosts
         for instance in \`cat /etc/ansible/prod-ips.list\`
         do
-                ssh-keyscan -H \$instance >> -/ .ssh/known_hosts
-echo "\$instance ansible_user-ec2-user ansible_ssh_private_key_file=/etc/ansible/key.pem" >> /etc/ansible/prod-hosts
+                ssh-keyscan -H \$instance >> ~/.ssh/known_hosts
+echo "\$instance ansible_user=ec2-user ansible_ssh_private_key_file=/etc/ansible/key.pem" >> /etc/ansible/prod-hosts
         done
 }
 instanceUpdate() {

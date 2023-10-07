@@ -14,7 +14,7 @@ variable "instance_type" {
   default = "t3.medium"
 }
 variable "domain_name" {
-  default = "sophieplace.com"
+  default = "crystalpalace.online"
 }
 variable "email" {
   default = "adesuposusan89@yahoo.com"

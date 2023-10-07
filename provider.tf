@@ -4,8 +4,8 @@ provider "aws" {
 }
 
 provider "vault" {
-  token   = "s.bT1oqrcYh8WIjC4JXriJRTAZ"
-  address = "https://sophieplace.com"
+  token   = "s.0gLQOHH3nfUfkwwgEaYL91CW"
+  address = "https://crystalpalace.online"
 }
 
 data "vault_generic_secret" "db_secret" {
