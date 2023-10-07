@@ -13,7 +13,7 @@ sudo ln -svf /usr/local/bin/aws /usr/bin/aws
 sudo bash -c 'echo "StrictHostKeyChecking No" >> /etc/ssh/ssh_config'
 
 #configuring awscli on the ansible server
-sudo su -c "aws configure set aws_access_key_id ${aws_iam_access_key.id}" ec2-user
+sudo su -c "aws configure set aws_access_key_id ${aws_iam_access_key.user-access-key.id}" ec2-user
 sudo su -c "aws configure set aws_secret_access_key ${aws_iam_access_key.user-access-key.secret}" ec2-user
 sudo su -c "aws configure set default.region eu-west-3" ec2-user
 sudo su -c "aws configure set default.output text" ec2-user
@@ -37,7 +37,7 @@ sudo echo "${file(var.stage-bashscript)}" >> /etc/ansible/stage-bashscript.sh
 sudo echo "${file(var.stage-playbook)}" >> /etc/ansible/stage-playbook.yml
 sudo echo "${file(var.stage-trigger)}" >> /etc/ansible/stage-trigger.yml
 sudo echo "${file(var.password)}" >> /etc/ansible/password.yml
-sudo echo "${var.private.key}" >> /etc/ansible/key.pem
+sudo echo "${var.private-key}" >> /etc/ansible/key.pem
 sudo bash -c 'echo "NEXUS_IP: ${var.nexus-server-ip}:8085" > /etc/ansible/ansible_vars_file.yml'
 echo 'admin123' > /etc/ansible/pass.txt
 ansible-vault encrypt --vault-password-file /etc/ansible/pass.txt /etc/ansible/prod-playbook.yml

@@ -6,8 +6,8 @@ variable "key_name" {}
 variable "tag-ansible-server" {}
 variable "stage-playbook" {}
 variable "prod-playbook" {}
-variable "stage-bash-script" {}
-variable "prod-bash-script" {}
+variable "stage-bashscript" {}
+variable "prod-bashscript" {}
 variable "stage-trigger" {}
 variable "prod-trigger" {}
 variable "password" {}
