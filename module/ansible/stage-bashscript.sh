@@ -1,10 +1,9 @@
 #!/bin/bash
-#This script automatically update ansible host inventory
-
+# This script automatically update ansible host inventory
 AWSBIN='/usr/local/bin/aws'
 awsDiscovery() {
-       \$AWSBIN ec2 describe-instances --filters Name=tag:aws:autoscaling:groupName,Values=ET2PACAAD-stage-asg \\
-             --query Reservations[*].Instances[*].NetworkInterfaces[*].{PrivateIpAddresses:PrivateIpAddress} > /etc/ansible/stage-ips.list
+        \$AWSBIN ec2 describe-instances --filters Name=tag:aws:autoscaling:groupName,Values=euteam1-stage-asg \\
+                --query Reservations[*].Instances[*].NetworkInterfaces[*].{PrivateIpAddresses:PrivateIpAddress} > /etc/ansible/stage-ips.list
         }
 inventoryUpdate() {
         echo "[webservers]" > /etc/ansible/stage-hosts
@@ -15,11 +14,10 @@ echo "\$instance ansible_user=ec2-user ansible_ssh_private_key_file=/etc/ansible
        done
 }
 instanceUpdate() {
-    sleep
-    ansible-playbook /etc/ansible/stage-trigger.yml --extra-vars "ansible_python_interpreter=/usr/bin/python3.9"
-    sleep 30
+  sleep 30
+  ansible-playbook /etc/ansible/stage-trigger.yml --extra-vars "ansible_python_interpreter=/usr/bin/python3.9"
+  sleep 30
 }
-
 awsDiscovery
 inventoryUpdate
 instanceUpdate

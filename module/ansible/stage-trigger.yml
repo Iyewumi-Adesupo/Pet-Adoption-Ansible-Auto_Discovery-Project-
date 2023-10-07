@@ -3,7 +3,6 @@
    vars_files:
      - /etc/ansible/password.yml
    gather_facts: false
-
    tasks:
     - name: try
       ansible.builtin.expect:
