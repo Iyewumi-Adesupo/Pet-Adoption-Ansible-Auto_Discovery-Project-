@@ -2,7 +2,7 @@
 # This script automatically update ansible host inventory
 AWSBIN='/usr/local/bin/aws'
 awsDiscovery() {
-        \$AWSBIN ec2 describe-instances --filters Name=tag:aws:autoscaling:groupName,Values=euteam1-stage-asg \\
+        \$AWSBIN ec2 describe-instances --filters Name=tag:aws:autoscaling:groupName,Values=ET2PACAAD-asg-stage \\
                 --query Reservations[*].Instances[*].NetworkInterfaces[*].{PrivateIpAddresses:PrivateIpAddress} > /etc/ansible/stage-ips.list
         }
 inventoryUpdate() {

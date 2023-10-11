@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 provider "vault" {
-  token   = "s.JFCrijF89UhcDaQtfWs3ifIV"
+  token   = "s.NaDxQxwYSjeFubuPHs4m9uG2"
   address = "https://crystalpalace.online"
 }
 
