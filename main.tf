@@ -9,10 +9,10 @@ module "vpc" {
   keypair                = "ET2PACAAD"
   public_keypair_path    = "~/keypair/ET2PACAAD.pub"
   tag-keypair            = "${local.name}-keypair"
-  AZ1                    = "eu-west-3a"
+  AZ1                    = "us-west-2a"
   PSN1_cidr              = "10.0.1.0/24"
   tag-subnet-1           = "${local.name}-public-subnet-1"
-  AZ2                    = "eu-west-3b"
+  AZ2                    = "us-west-2b"
   PSN2_cidr              = "10.0.2.0/24"
   tag-subnet-2           = "${local.name}-public-subnet-2"
   PrSN1_cidr             = "10.0.3.0/24"
@@ -42,7 +42,7 @@ module "vpc" {
 
 module "bastion-host" {
   source               = "./module/bastion-host"
-  ec2_ami              = "ami-0d767e966f3458eb5"
+  ec2_ami              = "ami-00aa0673b34e3c150"
   security_groups      = module.vpc.baston-sg
   instance_type        = "t2.medium"
   subnet_id            = module.vpc.public-subnet1
@@ -53,7 +53,7 @@ module "bastion-host" {
 
 module "jenkins" {
   source          = "./module/jenkins"
-  ec2_ami         = "ami-0d767e966f3458eb5"
+  ec2_ami         = "ami-00aa0673b34e3c150"
   instance_type   = "t2.medium"
   subnet_id       = module.vpc.private-subnet1
   key_name        = module.vpc.key-name
@@ -66,7 +66,7 @@ module "jenkins" {
 
 module "ansible" {
   source             = "./module/ansible"
-  ec2_ami            = "ami-0d767e966f3458eb5"
+  ec2_ami            = "ami-00aa0673b34e3c150"
   instance_type      = "t2.medium"
   security_group_ids = module.vpc.ansible-sg
   subnet_id          = module.vpc.public-subnet1
@@ -86,7 +86,7 @@ module "ansible" {
 module "asg-stage" {
   source                 = "./module/asg-stage"
   stage-lt               = "${local.name}-stage-lt"
-  image_id               = "ami-0d767e966f3458eb5"
+  image_id               = "ami-00aa0673b34e3c150"
   instance_type          = "t2.medium"
   vpc_security_group_ids = module.vpc.docker-sg
   key_name               = module.vpc.key-name
@@ -102,7 +102,7 @@ module "asg-stage" {
 module "asg-prod" {
   source                 = "./module/asg-prod"
   prod-lt                = "${local.name}-prod-lt"
-  image_id               = "ami-0d767e966f3458eb5"
+  image_id               = "ami-00aa0673b34e3c150"
   instance_type          = "t2.medium"
   vpc_security_group_ids = module.vpc.docker-sg
   key_name               = module.vpc.key-name
@@ -142,7 +142,7 @@ module "stage-high-availability" {
 
 module "nexus" {
   source          = "./module/nexus"
-  ec2_ami         = "ami-0d767e966f3458eb5"
+  ec2_ami         = "ami-00aa0673b34e3c150"
   instance_type   = "t2.medium"
   subnet_id       = module.vpc.public-subnet2
   key_name        = module.vpc.key-name
@@ -152,7 +152,7 @@ module "nexus" {
 
 module "sonarqube" {
   source               = "./module/sonarqube"
-  ubuntu_ami           = "ami-05b5a865c3579bbc4"
+  ubuntu_ami           = "ami-03f65b8614a860c29"
   instance_type        = "t2.medium"
   security_group_ids   = module.vpc.sonarqube-sg
   subnet_id            = module.vpc.public-subnet1

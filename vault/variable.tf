@@ -1,5 +1,5 @@
 variable "aws_region" {
-  default = "eu-west-3"
+  default = "us-west-2"
 }
 variable "profile" {
   default = "sue-ade"
@@ -8,7 +8,7 @@ variable "public_keypair_path" {
   default = "~/keypair/ET2PACAAD.pub"
 }
 variable "ec2_ami" {
-  default = "ami-05b5a865c3579bbc4"
+  default = "ami-00aa0673b34e3c150"
 }
 variable "instance_type" {
   default = "t3.medium"

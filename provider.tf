@@ -1,10 +1,10 @@
 provider "aws" {
-  region  = "eu-west-3"
+  region  = "us-west-2"
   profile = "sue-ade"
 }
 
 provider "vault" {
-  token   = "s.NaDxQxwYSjeFubuPHs4m9uG2"
+  token   = "s.ILohNPHqiEnNDfwLMvY5War1"
   address = "https://crystalpalace.online"
 }
 
