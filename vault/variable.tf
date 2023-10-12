@@ -7,8 +7,8 @@ variable "profile" {
 variable "public_keypair_path" {
   default = "~/keypair/ET2PACAAD.pub"
 }
-variable "ec2_ami" {
-  default = "ami-00aa0673b34e3c150"
+variable "ubuntu_ami" {
+  default = "ami-03f65b8614a860c29"
 }
 variable "instance_type" {
   default = "t3.medium"
