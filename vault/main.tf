@@ -59,7 +59,7 @@ resource "aws_security_group" "vault_sg" {
 
 #vault instance
 resource "aws_instance" "vault-server" {
-  ami                         = var.ec2_ami
+  ami                         = var.ubuntu_ami
   instance_type               = var.instance_type
   vpc_security_group_ids      = [aws_security_group.vault_sg.id]
   associate_public_ip_address = true
